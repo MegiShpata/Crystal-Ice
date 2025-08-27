@@ -1,0 +1,96 @@
+<footer id="footer">
+  <div class="footer-columns">
+    <div>
+      <h4>KONTAKT</h4>
+      <div class="footer-contact-row"><i class="fas fa-phone"></i> <a href="tel:+355692222222">+355 69 222 2222</a></div>
+      <div class="footer-contact-row"><i class="fas fa-envelope"></i> <a href="mailto:info@crystalice.al">info@crystalice.al</a></div>
+    </div>
+    <div>
+      <h4>ADRESË</h4>
+      <div class="footer-contact-row"><i class="fas fa-map-marker-alt"></i> Bulevardi Blu, Kamëz, Tiranë</div>
+      <div class="footer-contact-row"><i class="fas fa-globe"></i> www.crystalice.al</div>
+    </div>
+    <div>
+      <h4>ORARI</h4>
+      <div class="footer-contact-row"><i class="far fa-clock"></i> Hën–Sht: 08:00–18:00</div>
+      <div class="footer-contact-row"><i class="far fa-clock"></i> Diele: Mbyllur</div>
+    </div>
+    <div>
+      <h4>RRJETET SOCIALE</h4>
+      <div class="footer-socials">
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">© 2024 Crystal Ice Albania. Të gjitha të drejtat e rezervuara.</div>
+</footer>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Quicksand', 'Montserrat', Arial, sans-serif; }
+header {
+  background: #fff;
+  box-shadow: 0 2px 14px #00b5ef19;
+  border-bottom: 2px solid #eaf9fd;
+  margin-bottom: 0;
+}
+.header-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 5vw 12px 5vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo-row {
+  display: flex; align-items: center; gap:15px;
+}
+.logo-img { width:48px; height:48px; border-radius:16px; box-shadow: 0 2px 10px #00b5ef36; }
+.brand {
+  font-family: 'Quicksand', 'Montserrat', Arial, sans-serif;
+  font-size: 2.1rem; font-weight: 900; color: #0486d6; letter-spacing:2px;
+}
+nav { display: flex; gap: 30px;}
+nav a {
+  color: #133459; text-decoration: none; font-size: 1.12rem; font-weight: 700;
+  position: relative; padding: 4px 0; font-family: 'Quicksand', Arial, sans-serif;
+  transition: color .2s;
+}
+nav a.active, nav a:focus { color: #e62727;}
+nav a::after {
+  content:""; display:block; width:0; height:2.5px; background:#e62727;
+  border-radius:2px; transition:width .22s cubic-bezier(.42,0,.58,1); position:absolute; left:0; right:0; bottom:0;
+}
+nav a:hover::after, nav a.active::after { width:100%; }
+.hero-slogan-row {
+  text-align: center; margin: 12px 0 0 0;
+}
+.sloganQ {
+  font-size: 2.1rem; font-weight:900; color:#009fe3;
+  letter-spacing:1px; font-family:'Quicksand', 'Montserrat', Arial, sans-serif;
+}
+.iceWord { font-size:2.6rem; color:#e62727; font-weight:900; letter-spacing:2px; }
+.footer-columns {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between; align-items: flex-start;
+  gap: 30px;
+  padding: 30px 0 5px 0;
+}
+.footer-columns > div {
+  min-width: 180px;
+  flex: 1;
+  margin-bottom: 10px;
+}
+.footer-columns h4 {
+  color:#009fe3; margin-bottom: 11px; letter-spacing:1px; font-size: 1.05rem; font-weight:900;
+}
+.footer-contact-row { color:#20426c; margin: 5px 0; font-size: 1.02rem; display:flex; align-items: center; gap:7px;}
+.footer-socials a { color:#fff; background:#009fe3; border-radius:50%; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center; margin:0 6px; font-size:1.15rem; transition:.17s;}
+.footer-socials a:hover { background:#e62727; color:#fff;}
+.footer-copy {text-align: center; color:#90d2f5; padding: 11px 0 3px 0; font-size:0.99rem;}
+footer { background: #133459; color: #fff; border-top-left-radius: 25px; border-top-right-radius: 25px;}
+@media (max-width: 900px) {.footer-columns{flex-direction:column;align-items:flex-start;gap:10px;}}
+@media (max-width: 600px) {.brand{font-size:1.1rem;}.logo-img{width:28px;height:28px;}.header-bar{padding:8px 2vw 8px 2vw;}.footer-columns{padding:18px 0 2px 0;}}
+</style>
