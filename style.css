@@ -33,7 +33,7 @@ body{
 .site-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #eaf0f6;box-shadow:0 6px 24px rgba(0,0,0,.04)}
 .header-row{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0;flex-wrap:wrap}
 .brand-link{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo{width:70px;height:70px;}
+.logo{height:70px;}
 .brand{font-family:'Quicksand',sans-serif;font-weight:900;letter-spacing:.6px;color:var(--ink);font-size:1.9rem}
 .main-nav{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
 .nav-link{font-weight:700;color:var(--ink);text-decoration:none;position:relative;padding:6px 0;transition:color .2s}
