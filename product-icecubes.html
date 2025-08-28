@@ -1,225 +1,150 @@
 <!DOCTYPE html>
-<html lang="sq">
+<html lang="sq" data-lang="AL">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Akull Kubik | Crystal Ice Albania</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700;900&family=Nunito:wght@400;700&display=swap">
-  <script src="https://kit.fontawesome.com/71a04065a4.js" crossorigin="anonymous"></script>
-  <style>
-    :root {
-      --blue-main: #0e7ad1;
-      --blue-light: #eaf5fd;
-      --red: #e62727;
-      --gray: #f5f8fa;
-      --black: #222b34;
-    }
-    body { font-family: 'Nunito', Arial, sans-serif; margin:0; background: var(--gray); color: var(--black);}
-    header {
-      background: var(--blue-light);
-      box-shadow: 0 2px 14px #c7e7fd40;
-      border-bottom: 2px solid #a7d3ef;
-      position:sticky; top:0; z-index:99;
-    }
-    .header-bar {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 5vw 11px 5vw; max-width: 1200px; margin: 0 auto;
-    }
-    .logo-row { display: flex; align-items: center; gap:14px;}
-    .logo-img { width:50px; height:50px; border-radius:16px; box-shadow: 0 2px 10px #13587b23;}
-    .brand {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--blue-main);
-      letter-spacing: 2px;
-      font-family: 'Quicksand', Arial, sans-serif;
-      text-shadow: 0 2px 14px #81e8fa16;
-    }
-    nav { display: flex; gap: 28px; justify-content: center;}
-    nav a {
-      font-weight: 700;
-      font-size: 1.13rem;
-      color: var(--blue-main);
-      font-family: 'Nunito', Arial, sans-serif;
-      text-decoration: none;
-      position: relative; padding: 6px 0; transition: color .2s;
-      letter-spacing: 1.1px;
-    }
-    nav a.active, nav a:focus { color: var(--red);}
-    nav a::after {
-      content:""; display:block; width:0; height:3px; background:var(--blue-main);
-      border-radius:2px; transition:width .22s cubic-bezier(.42,0,.58,1); position:absolute; left:0; right:0; bottom:0;
-    }
-    nav a:hover::after, nav a.active::after { width:100%; background:var(--red);}
-    /* Produkti page style */
-    .product-page-section {
-      max-width:900px;
-      margin: 54px auto 40px auto;
-      display:flex;
-      gap:36px;
-      align-items:flex-start;
-      flex-wrap:wrap;
-      background:#fff;
-      border-radius:28px;
-      box-shadow:0 8px 36px #0e7ad13c, 0 2px 10px #13587b11;
-      padding:38px 30px 34px 30px;
-    }
-    .product-img {
-      width:340px;max-width:96vw;border-radius:22px;box-shadow:0 7px 32px #0992d029;
-      object-fit:cover;
-    }
-    .prod-section-title {
-      color:#0e7ad1;font-size:2.05rem;font-family:'Quicksand',Arial,sans-serif;font-weight:900; margin-bottom:10px;
-    }
-    .prod-desc {
-      font-size:1.15rem;color:#1e2232;font-weight:600;margin-bottom:18px;line-height:1.7;
-    }
-    .prod-info-list {
-      font-size:1rem;color:#135087;line-height:1.8;margin-bottom:18px;padding-left:18px;
-    }
-    .btn-details {
-      background: none;
-      border: 2px solid var(--blue-main);
-      color: var(--blue-main);
-      border-radius: 22px;
-      font-family: 'Nunito', Arial, sans-serif;
-      font-weight: 800;
-      font-size: 1.05rem;
-      cursor:pointer;
-      display:inline-flex;align-items:center;gap:8px;
-      text-decoration: none;
-      transition: color .18s, border-color .18s, background .15s;
-      outline:none;
-      padding: 9px 22px;
-      margin-top:8px;
-    }
-    .btn-details i {transition:.2s;}
-    .btn-details:hover, .btn-details:focus {
-      color: var(--red);
-      border-color: var(--red);
-      background: rgba(230,39,39,0.05);
-    }
-    .btn-details:hover i {transform: translateX(7px);}
-    /* Footer */
-    footer {
-      background: linear-gradient(120deg, #b6defc 70%, #0e7ad1 100%);
-      color: #135087;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      box-shadow: 0 -3px 28px #a1cbf130;
-      margin-top: 44px;
-      padding: 0;
-    }
-    .footer-columns {
-      max-width: 1200px;
-      margin: 0 auto; display: flex; flex-wrap: wrap;
-      justify-content: space-between; align-items: flex-start;
-      gap: 24px; padding: 18px 0 3px 0;
-    }
-    .footer-columns h4 {
-      color: #0e7ad1;
-      font-weight: 700;
-      margin-bottom: 6px;
-      font-size: 1.07rem;
-      letter-spacing: 0.5px;
-    }
-    .footer-contact-row, .footer-contact-row a {
-      color: #135087; font-size: 0.95rem; font-weight: 400; margin-bottom: 1.5px;
-    }
-    .footer-socials {margin-top:6px;}
-    .footer-socials a {
-      color:var(--blue-main); background:#fff;
-      border-radius:50%; width:28px; height:28px;
-      display:inline-flex; align-items:center; justify-content:center;
-      margin:0 3px; font-size:1.08rem; transition:.16s;
-      border:1.2px solid #eaf5fd;
-    }
-    .footer-socials a:hover { background:var(--red); color:#fff; border-color:var(--red);}
-    .footer-copy {
-      text-align: center; color:#135087; padding: 6px 0 6px 0;
-      font-size:0.95rem; font-weight:400;
-    }
-    @media (max-width: 900px) {
-      .product-page-section { flex-direction:column; align-items:center; padding:18px 4vw 20px 4vw;}
-      .footer-columns {gap:10px;}
-    }
-    @media (max-width: 500px) {
-      .brand{font-size:1.11rem;}
-      .logo-img{width:32px;height:32px;}
-      .header-bar{padding:7px 2vw 7px 2vw;}
-      .footer-columns{padding:12px 0 2px 0;}
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Kubi Normal Akulli (Normal Ice Cubes) — Crystal Ice</title>
+  <meta name="description" content="Kubi Normal Akulli — kube të qëndrueshme që shkrihen ngadalë. Ideale për çdo bar e restorant. Food-grade, HACCP/ISO.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Quicksand:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-  <div class="header-bar">
-    <div class="logo-row">
-      <a href="index.html" style="display: flex; align-items: center; gap: 14px; text-decoration:none;">
-        <img class="logo-img" src="img/WhatsApp Image 2025-07-28 at 20.17.09 (3).jpeg" alt="Crystal Ice Logo" />
-        <span class="brand" style="cursor:pointer; color: #0e7ad1;">Crystal Ice</span>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="index.html#hero" class="brand-link" aria-label="Crystal Ice - Kreu">
+        <img src="img/logo/logo.png" alt="Crystal Ice Logo" class="logo"><span class="brand">Crystal Ice</span>
       </a>
+      <nav class="main-nav">
+        <a href="index.html#products" class="nav-link" data-al="Produktet" data-en="Products">Produktet</a>
+        <a href="index.html#about" class="nav-link" data-al="Rreth Nesh" data-en="About Us">Rreth Nesh</a>
+        <a href="index.html#certs" class="nav-link" data-al="Certifikata" data-en="Certifications">Certifikata</a>
+        <a href="index.html#contact" class="nav-link" data-al="Kontakt" data-en="Contact">Kontakt</a>
+      </nav>
+      <div class="lang-switch"><button class="lang-btn active" data-setlang="AL">AL</button><button class="lang-btn" data-setlang="EN">EN</button></div>
     </div>
-    <nav>
-      <a href="index.html" class="nav-link">Kreu</a>
-      <a href="index.html#products" class="nav-link active">Produktet</a>
-      <a href="index.html#footer" class="nav-link">Kontakt</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-  <!-- Produkti -->
-  <section class="product-page-section">
-    <img src="img/WhatsApp Image 2025-07-28 at 20.17.09 (5).jpeg" alt="Akull Kubik" class="product-img">
-    <div style="flex:1;min-width:260px;">
-      <h1 class="prod-section-title">Akull Kubik</h1>
-      <p class="prod-desc">
-        Akulli kubik Crystal Ice është zgjedhja ideale për baret, restorantet, hotelet dhe çdo event që kërkon freski dhe prezantim perfekt të pijeve. I tejdukshëm, pa shije dhe pa erë, garanton pije të pastra dhe të ftohta gjatë gjithë kohës.<br>
-        I prodhuar me teknologji moderne dhe ujë të filtruar, ruan integritetin dhe freskinë e çdo kokteji apo lëngu – i sigurt për konsum familjar dhe profesional.
-      </p>
-      <ul class="prod-info-list">
-        <li>Forma kubike perfekte për çdo lloj pijeje.</li>
-        <li>Rezistent ndaj shkrirjes – ruan freskinë gjatë gjithë shërbimit.</li>
-        <li>Paketim higjenik, i certifikuar HACCP & ISO.</li>
-        <li>Pa shije, pa aromë, me pastërti maksimale.</li>
-        <li>I përshtatshëm për lokale, evente, hotele, bare dhe konsum shtëpiak.</li>
-      </ul>
-<a href="index.html" class="btn-details" style="margin-top:16px;">Kthehu te faqja kryesore <i class="fas fa-arrow-left"></i></a>
+  <section class="hero" style="padding-top:48px;padding-bottom:28px;">
+    <div class="container hero-in">
+      <div class="hero-copy">
+        <div class="slogan" style="margin-bottom:8px"><span class="s1 show">No <span class="ice">ICE</span>?</span><span class="s2">No Fun!</span></div>
+        <h1 style="margin:.2rem 0 0 0;font-weight:900;"><span data-al="Kubi Normal Akulli" data-en="Normal Ice Cubes">Kubi Normal Akulli</span></h1>
+        <p class="hero-desc" data-al="Kube të qëndrueshme, që shkrihen ngadalë dhe e mbajnë pijen të ftohtë pa e holluar shpejt."
+           data-en="Reliable, slow-melting cubes that keep drinks cold without watering them down too fast.">
+          Kube të qëndrueshme, që shkrihen ngadalë dhe e mbajnë pijen të ftohtë pa e holluar shpejt.
+        </p>
+        <div class="hero-actions">
+          <a href="index.html#products" class="btn primary" data-al="Kthehu te produktet" data-en="Back to products">Kthehu te produktet</a>
+          <a href="index.html#contact" class="btn ghost" data-al="Na kontakto" data-en="Contact us">Na kontakto</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <!-- zgjedh një nga fotot e kubave -->
+        <img src="img/akull kokerr/IMG-20250814-WA0022.jpg" alt="Kube akulli - hero" class="hero-img">
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-columns">
-      <div>
-        <h4>KONTAKT</h4>
-        <div class="footer-contact-row">+355 69 222 2222</div>
-        <div class="footer-contact-row">info@crystalice.al</div>
+  <section class="section" style="padding-top:28px">
+    <div class="container reveal">
+      <div class="section-head" style="margin-bottom:16px">
+        <h2 data-al="Galeria & Avantazhet" data-en="Gallery & Benefits">Galeria & Avantazhet</h2>
+        <p class="muted" data-al="Standard i qëndrueshëm, pastërti kristal dhe performancë e lartë në shkrirje."
+                         data-en="Consistent standard, crystal clarity and slow melting performance.">Standard i qëndrueshëm, pastërti kristal dhe performancë e lartë në shkrirje.</p>
       </div>
-      <div>
-        <h4>ADRESË</h4>
-        <div class="footer-contact-row">Bulevardi Blu, Kamëz, Tiranë</div>
-        <div class="footer-contact-row">www.crystalice.al</div>
-      </div>
-      <div>
-        <h4>ORARI</h4>
-        <div class="footer-contact-row">Hën–Sht: 08:00–18:00</div>
-        <div class="footer-contact-row">Diele: Mbyllur</div>
-      </div>
-      <div>
-        <h4>RRJETET SOCIALE</h4>
-        <div class="footer-socials">
-          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+      <div class="grid-4">
+        <div class="card reveal">
+          <div class="img-wrap"><img src="img/akull kokerr/download (2).jpeg" alt="Cubes - foto 1"></div>
+          <h3 data-al="Qartësi & Pastërti" data-en="Clarity & Purity">Qartësi & Pastërti</h3>
+          <p class="desc" data-al="Kristal, pa aromë/shije — perfekt për çdo pije." data-en="Crystal-clear, odorless/tasteless — perfect for any drink.">Kristal, pa aromë/shije — perfekt për çdo pije.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="img-wrap"><img src="img/akull kokerr/download (4).jpeg" alt="Cubes - foto 2"></div>
+          <h3 data-al="Shkrirje e ngadaltë" data-en="Slow melting">Shkrirje e ngadaltë</h3>
+          <p class="desc" data-al="Mban pijen të ftohtë pa e holluar shpejt." data-en="Keeps drinks cold without diluting quickly.">Mban pijen të ftohtë pa e holluar shpejt.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="img-wrap"><img src="img/akull kokerr/IMG-20250814-WA0025.jpg" alt="Cubes - foto 3"></div>
+          <h3 data-al="Përshtatshmëri" data-en="Suitability">Përshtatshmëri</h3>
+          <p class="desc" data-al="Për bare, restorante, hotele dhe përdorim shtëpiak." data-en="For bars, restaurants, hotels and home use.">Për bare, restorante, hotele dhe përdorim shtëpiak.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="img-wrap"><img src="img/akull kokerr/IMG-20250814-WA0022.jpg" alt="Cubes - foto 4"></div>
+          <h3 data-al="Distribuim ditor" data-en="Daily distribution">Distribuim ditor</h3>
+          <p class="desc" data-al="Zinxhir i ftohtë, dorëzim i shpejtë, cilësi konstante." data-en="Cold chain, fast delivery, consistent quality.">Zinxhir i ftohtë, dorëzim i shpejtë, cilësi konstante.</p>
         </div>
       </div>
     </div>
-    <div class="footer-copy">
-      © 2024 Crystal Ice Albania. Të gjitha të drejtat e rezervuara.
+  </section>
+
+  <section class="section" style="padding-top:22px">
+    <div class="container reveal">
+      <div class="section-head" style="margin-bottom:12px"><h2 data-al="Specifikime" data-en="Specifications">Specifikime</h2></div>
+      <div class="grid-4">
+        <div class="card"><h3 data-al="Përmasa" data-en="Size">Përmasa</h3><p class="desc" data-al="Kube standarde 28–32 mm" data-en="Standard cubes 28–32 mm">Kube standarde 28–32 mm</p></div>
+        <div class="card"><h3 data-al="Paketimi" data-en="Packaging">Paketimi</h3><p class="desc" data-al="Çanta të mbyllura 2–10 kg" data-en="Sealed bags 2–10 kg">Çanta të mbyllura 2–10 kg</p></div>
+        <div class="card"><h3 data-al="Temperatura" data-en="Temperature">Temperatura</h3><p class="desc" data-al="-18°C (ruajtje) / -5°C (servis)" data-en="-18°C (storage) / -5°C (service)">-18°C (ruajtje) / -5°C (servis)</p></div>
+        <div class="card"><h3>HACCP/ISO</h3><p class="desc" data-al="Prodhim me standarde ushqimore" data-en="Produced to food-grade standards">Prodhim me standarde ushqimore</p></div>
+      </div>
     </div>
+  </section>
+
+  <section class="section" style="padding-top:8px;padding-bottom:40px">
+    <div class="container reveal" style="text-align:center">
+      <a href="index.html#products" class="btn primary" data-al="Kthehu te produktet" data-en="Back to products">Kthehu te produktet</a>
+    </div>
+  </section>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="f-col"><h5 data-al="Kontakt" data-en="Contact">Kontakt</h5><p>+355 69 222 2222<br>info@crystalice.al</p></div>
+      <div class="f-col"><h5 data-al="Adresa" data-en="Address">Adresa</h5><p>Bulevardi Blu, Kamëz, Tiranë</p></div>
+      <div class="f-col"><h5 data-al="Orari" data-en="Opening Hours">Orari</h5><p data-al="Hën–Sht: 08:00–18:00<br>Diele: Mbyllur" data-en="Mon–Sat: 08:00–18:00<br>Sun: Closed">Hën–Sht: 08:00–18:00<br>Diele: Mbyllur</p></div>
+      <div class="f-col"><h5 data-al="Ku mund të na ndiqni" data-en="Social Media">Ku mund të na ndiqni</h5>
+        <div class="socials">
+          <a href="https://www.instagram.com/crystal_ice_production?igsh=MXZ0OWcxNjBmMGU3eA%3D%3D&utm_source=qr" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@crystalice.al?_t=ZM-8yjNE9eSPCw&_r=1" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">© 2025 Crystal Ice Albania — No ICE? No Fun!</div>
   </footer>
+
+  <button class="scroll-fab" id="scrollFab" aria-label="Scroll"><i class="fa-solid fa-arrow-down down"></i><i class="fa-solid fa-arrow-up up"></i></button>
+
+  <script>
+    // Language switch with localStorage support
+const langBtns = document.querySelectorAll('.lang-btn');
+const textNodes = document.querySelectorAll('[data-al],[data-en]');
+
+let savedLang = localStorage.getItem("lang") || "AL";
+applyLang(savedLang);
+
+langBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    langBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    let lang = btn.dataset.setlang;
+    localStorage.setItem("lang", lang);   // save choice
+    applyLang(lang);
+  });
+});
+
+function applyLang(lang){
+  document.documentElement.setAttribute('data-lang', lang);
+  langBtns.forEach(b=> b.classList.toggle('active', b.dataset.setlang===lang));
+  textNodes.forEach(el=> el.innerHTML = el.getAttribute(lang==='EN' ? 'data-en':'data-al'));
+}
+const s1=document.querySelector('.s1'),s2=document.querySelector('.s2');let flip=0;setInterval(()=>{(flip++%2?(s1.classList.remove('show'),s2.classList.add('show')):(s2.classList.remove('show'),s1.classList.add('show')))},1800);
+    const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+    const fab=document.getElementById('scrollFab');function atTop(){return window.scrollY<60}function toggleFab(){fab.classList.toggle('to-top',!atTop())}toggleFab();window.addEventListener('scroll',toggleFab);
+    fab.addEventListener('click',()=>{if(atTop()){window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})}else{window.scrollTo({top:0,behavior:'smooth'})}});
+  </script>
 </body>
 </html>
