@@ -104,7 +104,7 @@ body{
 .findus{background:#fff;border-top:1px solid #edf2f7;border-bottom:1px solid #edf2f7}
 .logos-carousel{display:flex;gap:26px;overflow:auto;scroll-behavior:smooth;padding:12px 2px 14px 2px;margin-bottom:16px;scrollbar-width:none}
 .logos-carousel::-webkit-scrollbar{display:none}
-.logo-item{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:170px;height:74px;border-radius:12px;background:#f7fbff;border:1px solid #edf2f7;box-shadow:var(--shadow);padding:10px}
+.logo-item{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:200px;height:90px;border-radius:12px;background:#f7fbff;border:1px solid #edf2f7;box-shadow:var(--shadow);padding:10px}
 .logo-item img{max-width:100%;max-height:100%;object-fit:contain}
 .logo-badge{font-weight:800;color:#2b455e;padding:8px 10px;border-radius:10px;border:1px dashed #cfe2f5;background:#fff}
 .findus .lists{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -145,6 +145,10 @@ body{
   .grid-4{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .slogan .s1,.slogan .s2{font-size:2.4rem}
+   .footer-grid {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 }
 @media (max-width:400px){
   .brand{font-size:1.4rem}
@@ -156,7 +160,25 @@ body{
   .scroll-fab{right:14px;bottom:16px;width:48px;height:48px}
 }
 
+@media (max-width: 920px) {
+  .main-nav {
+    justify-content: flex-start;  /* lëri majtas */
+    padding-left: 18px;           /* hapësirë nga e majta */
+    width: 100%;
+    order: 3;
+  }
 
+  .main-nav .nav-link {
+    display: block;
+    padding: 10px 0;
+  }
+
+   .footer-grid {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+}
 #products .card{
   padding:0 !important;            /* hiq padding-un rreth fotos */
   overflow:hidden;
@@ -208,4 +230,61 @@ body{
 }
 #products .card .btn.link:hover::after{
   width:calc(100% - 36px);
+}
+/* Burger button */
+.nav-toggle{ display:none }
+.burger{ display:none; cursor:pointer; padding:8px; border-radius:12px; border:1px solid #e6eef6; }
+.burger span{ display:block; width:24px; height:2px; margin:5px 0; background:var(--ink); transition:.25s ease; border-radius:2px; }
+
+/* Collapse nav nën 860px */
+@media (max-width: 860px){
+  .burger{ display:block; order:2 }
+  .lang-switch{ order:3; margin-left:auto }
+  .main-nav{
+    order:4;
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px 12px;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .25s ease;
+    padding-top:0;
+  }
+  /* shfaq kur hapet burger */
+  .nav-toggle:checked ~ .main-nav{ max-height:240px; padding-top:8px }
+
+  /* burger morph në X */
+  .nav-toggle:checked + .burger span:nth-child(1){ transform:translateY(7px) rotate(45deg) }
+  .nav-toggle:checked + .burger span:nth-child(2){ opacity:0 }
+  .nav-toggle:checked + .burger span:nth-child(3){ transform:translateY(-7px) rotate(-45deg) }
+
+  /* header kompakt */
+  .header-row{ gap:10px; padding:12px 0 }
+  .logo{ height:52px }
+  .brand{ font-size:1.5rem }
+  .nav-link{ padding:8px 0 }
+}
+
+/* telefona shumë të vegjël */
+@media (max-width:520px){
+  .main-nav{ grid-template-columns:1fr }
+  .brand{ font-size:1.35rem }
+  .logo{ height:44px }
+}
+
+/* Footer stacking + spacing */
+@media (max-width:920px){
+  .site-footer .footer-grid{ grid-template-columns:1fr 1fr }
+}
+@media (max-width:560px){
+  .site-footer .footer-grid{ grid-template-columns:1fr }
+  .site-footer p{ font-size:1.02rem }
+}
+
+/* Carousel tweaks */
+.logos-carousel{ position:relative }
+
+.hero-img, .img-wrap img {
+  pointer-events: none;
 }
